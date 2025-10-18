@@ -6,7 +6,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatListModule} from '@angular/material/list';
-import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar'; // <<< ADDED MatSnackBar and MatSnackBarModule
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 
 export interface Tile {
   color: string;
@@ -19,13 +19,11 @@ export interface Tile {
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  // <<< ADDED MatSnackBarModule to imports
   imports: [MatTabsModule, MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule,MatListModule, MatSnackBarModule], 
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
-  // Inject MatSnackBar service
-  constructor(private snackBar: MatSnackBar) {} // <<< ADDED Constructor
+  constructor(private snackBar: MatSnackBar) {}
 
   phoneNumber = signal('+94754019752');
   linkedinUrl = signal('https://www.linkedin.com/in/janani-thavarajah-52987a1b2');
@@ -40,13 +38,12 @@ export class App {
 
   async copyPhoneNumber() {
   try {
-    const number = this.phoneNumber(); // Get the phone number signal value
+    const number = this.phoneNumber();
     await navigator.clipboard.writeText(number);
     console.log('Phone number copied to clipboard:', number);
     
-    // Show a snackbar notification to the user
-    this.snackBar.open('Number is copied', 'Dismiss', { // <<< ADDED SNACKBAR
-        duration: 2000, // Show for 2 seconds
+    this.snackBar.open('Number is copied', 'Dismiss', {
+        duration: 2000, 
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
     });
