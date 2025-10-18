@@ -1,0 +1,93 @@
+.maincardsec{
+    padding: 20px !important;
+    border: none;
+}
+.introhead{
+    font-weight: bold;
+    font-size: xx-large;
+}
+.intropara{
+    text-align: justify;
+}
+.contact-button-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    padding-left: 10px;
+}
+.contacticon{
+    background-color: light-dark(#fdf1f2, #201a1b);
+    color: #201a1b;
+}
+.experticehead{
+    text-align: center;
+    font-size: xx-large;
+}
+.skillsdiv{
+    padding: 30px;
+    display: flex;
+    gap:20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.image-card{
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+.skillimg{
+    height: 100px;
+}
+
+.experienceclass{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+}
+.companycard{
+    border: none;
+    background-color: light-dark(#fdf1f2, #201a1b);
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    width: 600px;
+}
+.projectsdiv{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+}
+.projectbox{
+    height: 350px;
+    width: 350px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+.projectbox:hover{
+    height: 360px;
+    width: 360px;
+}
+a.projectbox,
+a.projectbox:link,
+a.projectbox:visited,
+a.projectbox:hover,
+a.projectbox:active {
+  text-decoration: none;
+  color: inherit;
+  background-color: light-dark(#fdf1f2, #201a1b);
+  border-radius: 50px;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+.proimg{
+    height: 100px;
+}
+.prohead{
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+.procontent{
+    text-align: justify;
+    font-size: larger;
+}
