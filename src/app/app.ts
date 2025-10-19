@@ -28,13 +28,14 @@ export class App {
   phoneNumber = signal('+94754019752');
   linkedinUrl = signal('https://www.linkedin.com/in/janani-thavarajah-52987a1b2');
   githubUrl = signal('https://github.com/Jaanulittleluv');
-  cvUrl = signal('YOUR_CV_DOWNLOAD_LINK_HERE');
+  cvUrl = signal('https://drive.google.com/file/d/1VFiDW0Mp9UVKGfLbYNz4sNh87mVkBm5f/view?usp=sharing');
   prj1URL = signal('https://github.com/Jaanulittleluv/BookRates');
   prj2URL = signal('https://github.com/Jaanulittleluv/BookApp');
   prj3URL = signal('https://github.com/Jaanulittleluv/SpringBoot');
   prj4URL = signal('https://github.com/Jaanulittleluv/sql-employee-data-management');
   prj5URL = signal('https://github.com/Jaanulittleluv/Veget-store');
   prj6URL = signal('https://github.com/Jaanulittleluv/Bear-Jump');
+  prj7URL = signal('https://github.com/Jaanulittleluv/Cypress');
 
   async copyPhoneNumber() {
   try {
