@@ -1,151 +1,312 @@
-<mat-tab-group>
-  <!-- About me section -->
-  <mat-tab label="About Me">
-    <!-- Introducion part -->
-    <mat-card appearance="outlined" class="maincardsec">
-      <mat-card-header>
-        <mat-card-title class="introhead"> Hello, it's me, Janani Thavaraja</mat-card-title>
-        <mat-card-subtitle class="intropara">Motivated and detail-oriented ICT graduate from the University of Vavuniya, passionate about creating impactful digital experiences and ensuring their quality.
-          I bring hands-on experience in front-end development, specializing in building responsive and user-centric interfaces, alongside practical expertise in Quality Assurance (QA). My technical skill set includes proficiency in Python for web scraping, automation, and most importantly, Automation QA, where I utilize tools like Selenium to execute tests and design comprehensive test cases.
-          I am eager to apply my combined development and testing skills to a valuable software development role, where I can contribute to innovative, high-quality projects and continue to grow as a professional.</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-actions>
-          <div class="contact-button-row">
-            <button matMiniFab matTooltip="Mobile Number" class="contacticon" (click)="copyPhoneNumber()">
-              <mat-icon>phone</mat-icon>
-            </button>
-            <a matMiniFab matTooltip="LinkedIn" class="contacticon" [href]="linkedinUrl()" target="_blank" rel="noopener">
-              <mat-icon>linkedin</mat-icon>
-            </a>
-            <a matMiniFab matTooltip="Github" class="contacticon" [href]="githubUrl()" target="_blank" rel="noopener">
-              <mat-icon>code</mat-icon>
-            </a>
-            <a matMiniFab matTooltip="CV file" class="contacticon" [href]="cvUrl()" target="_blank" rel="noopener">
-              <mat-icon>file_open</mat-icon>
-            </a>
-          </div>
-        </mat-card-actions>
-        <!-- Expertice part -->
-         <h1 class="experticehead">Expertice</h1>
-        <div class="skillsdiv">
-          <mat-card class="image-card">
-            <img class="skillimg" mat-card-image [src]="imagepath()" alt="Angular" matTooltip="Angular">
-          </mat-card>
-          <mat-card class="image-card">
-            <img class="skillimg" mat-card-image [src]="imagepath1()" alt="Python" matTooltip="Python">
-          </mat-card>
-          <mat-card class="image-card">
-            <img class="skillimg" mat-card-image [src]="imagepath2()" alt="Selenium" matTooltip="Selenium">
-          </mat-card>
-          <mat-card class="image-card">
-            <img class="skillimg" mat-card-image [src]="imagepath3()" alt="ReactJS" matTooltip="ReactJS">
-          </mat-card>
-          <mat-card class="image-card">
-            <img class="skillimg" mat-card-image [src]="imagepath4()" alt="TypeScript" matTooltip="TypeScript">
-          </mat-card>
-          <mat-card class="image-card">
-            <img class="skillimg" mat-card-image [src]="imagepath5()" alt="MySQL" matTooltip="MySQL">
-          </mat-card>
-          <mat-card class="image-card">
-            <img class="skillimg" mat-card-image [src]="imagepath6()" alt="PHP" matTooltip="PHP">
-          </mat-card>
-          <mat-card class="image-card">
-            <img class="skillimg" mat-card-image [src]="imagepath7()" alt="Bootstrap" matTooltip="Bootstrap">
-          </mat-card>
-          <mat-card class="image-card">
-            <img class="skillimg" mat-card-image [src]="imagepath8()" alt="Springboot" matTooltip="Springboot">
-          </mat-card>
-          <mat-card class="image-card">
-            <img class="skillimg" mat-card-image [src]="imagepath9()" alt="CSS" matTooltip="CSS">
-          </mat-card>
-          <mat-card class="image-card">
-            <img class="skillimg" mat-card-image [src]="imagepath10()" alt="Figma" matTooltip="Figma">
-          </mat-card>
-        </div>
-      </mat-card>  
-    </mat-tab>
-  
-    <!-- Experience Section -->
-    <mat-tab label="Experience"> 
-      <div class="experienceclass">
-         <mat-card class="companycard" appearance="outlined">
-          <mat-card-header>
-            <mat-card-title-group>
-              <mat-card-title class="companyname">Loonslab (pvt) ltd.</mat-card-title>
-              <mat-card-subtitle>Trainee Software Engineer | February 2024 - August 2024</mat-card-subtitle>
-              <img mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyT_KB8nVnPPloL70zZe66RL8BoJ5yomZxRQ&s" >
-            </mat-card-title-group>
-          </mat-card-header>
-          <mat-card-content>
-            <mat-card-subtitle>Crypto Tracker Web App</mat-card-subtitle>
-              <span><b>~</b></span> Designed and prototyped a Crypto Tracker web application in Figma, with a focus on enhancing user experience and integrating real-time cryptocurrency data and developed a responsive front-end using EJS, HTML, CSS, and JavaScript to ensure seamless performance and a consistent user experience across all devices.<br>
-              <span><b>~</b></span> Developed robust data solutions with Python, leveraging Selenium for web scraping and Beautiful Soup for precise data extraction, including automation QA for data validation and application testing.
-              <mat-card-subtitle>Chrome Extension Project</mat-card-subtitle>
-              <span><b>~</b></span> Developed and optimized a Chrome extension with a user-friendly set of features for improving accessibility and providing a seamless user experience and added interactive UI components to deliver a smooth experience and responsiveness
-            <mat-card-subtitle>Daily Diary Web App</mat-card-subtitle>
-              <span><b>~</b></span> Developed an easy-to-use Daily Diary web app with ReactJS theme customization and improved text formatting features for a personalized writing experience.<br>
-              <span><b>~</b></span> Integrated CKEditor for rich-text editing support, providing easier usability and content customizationand Supported cross-device compatibility through a responsive layout for seamless user experiences.<br>
-              <span><b>~</b></span> Utilized QA automation techniques to continuously test and validate features like rich-text editing, theme application, and cross-device responsiveness.
-          </mat-card-content>
-        </mat-card> 
-        <mat-card class="companycard" appearance="outlined">
-          <mat-card-header>
-            <mat-card-title-group>
-              <mat-card-title class="companyname">Fieldex Sdn Bhd</mat-card-title>
-              <mat-card-subtitle>Junior Software Engineer | April 2025 - October 2025</mat-card-subtitle>
-              <img mat-card-sm-image src="https://media.licdn.com/dms/image/v2/D560BAQHditYLU7sHbA/company-logo_200_200/company-logo_200_200/0/1709513997733/fieldex_logo?e=2147483647&v=beta&t=k52sxF4774YRe4dvbeQs3enJ5nbPzUy-o7hpQUuz700" >
-            </mat-card-title-group>
-          </mat-card-header>
-          <mat-card-content>
-            <mat-card-subtitle>Fieldex System Project</mat-card-subtitle>
-            <span><b>~</b></span> Carried out work on the Fieldex system, focusing on API tracking and data analysis. Developed and implemented JSON data tracking and integration for enhancing core system functionality and established Selenium-based smoke tests for important API paths.<br>
-            <span><b>~</b></span> Developed and designed responsive new web pages using Angular and SCSS, with strong emphasis on enhancing user experience (UX) and tested for cross-browser compliance using Playwright<br>
-            <span><b>~</b></span> Updated and managed inline page text through JSON files, creating an efficient solution for content updates that scales.
-          </mat-card-content>
-        </mat-card>  
-      </div>
-    </mat-tab>
+<p-menubar [model]="items" styleClass="transparent-menubar">
+</p-menubar>
 
-    <!-- Project Section -->
-    <mat-tab label="Projects">
-      <mat-card appearance="outlined" class="maincardsec">
-        <div class="projectsdiv">
-          <a mat-card class="projectbox" [href]="prj1URL()" target="_blank" rel="noopener">
-            <img src="https://www.svgrepo.com/show/511064/mention.svg" class="proimg">
-            <header class="prohead">Bookrates</header><br>
-            <mat-card-content class="procontent">A simple Python project scrapes a list of top books from Goodreads website and saves them to a text file. It uses Selenium to handle dynamic web content and BeautifulSoup for parsing the HTML.</mat-card-content>
-          </a>
-          <a mat-card class="projectbox" [href]="prj2URL()" target="_blank" rel="noopener">
-            <img src="https://www.svgrepo.com/show/34989/books-stack-of-three.svg" class="proimg">
-            <header class="prohead">Book App</header><br>
-            <mat-card-content class="procontent">A powerful and user-friendly book search application built with Angular, TypeScript, and CSS, utilizing the Google Books API to fetch and display book details.</mat-card-content>
-          </a>
-          <a mat-card class="projectbox" [href]="prj7URL()" target="_blank" rel="noopener">
-            <img src="https://www.svgrepo.com/show/353630/cypress.svg" class="proimg">
-            <header class="prohead">Cypress</header><br>
-            <mat-card-content class="procontent">A portfolio app testing using Cypress. Here visting the URL was tested and added screenshots.</mat-card-content>
-          </a>
-          <a mat-card class="projectbox" [href]="prj3URL()" target="_blank" rel="noopener">
-            <img src="https://www.svgrepo.com/show/333604/spring-boot.svg" class="proimg">
-            <header class="prohead">Springbooot Project</header><br>
-            <mat-card-content class="procontent">A simple Spring boot project to showcase GET,POST,PUT method using POSTMAN and MYSQL</mat-card-content>
-          </a>
-          <a mat-card class="projectbox" [href]="prj4URL()" target="_blank" rel="noopener">
-            <img src="https://www.svgrepo.com/show/445692/data-source.svg" class="proimg">
-            <header class="prohead">SQL Data Management</header><br>
-            <mat-card-content class="procontent">This is a SQL work where web site is required to save its data to the database system. I created this webpage using php with HTML, Bootstrap and SQL.</mat-card-content>
-          </a>
-          <a mat-card class="projectbox" [href]="prj5URL()" target="_blank" rel="noopener">
-            <img src="https://www.svgrepo.com/show/488403/store.svg" class="proimg">
-            <header class="prohead">Veget Store</header><br>
-            <mat-card-content class="procontent">A web application made with html, tailwind CSS, CSS and SQL for marketing purpose.</mat-card-content>
-          </a>
-          <a mat-card class="projectbox" [href]="prj6URL()" target="_blank" rel="noopener">
-            <img src="https://www.svgrepo.com/show/504427/google-play-games.svg" class="proimg">
-            <header class="prohead">Bear Jump</header><br>
-            <mat-card-content class="procontent">This is a minigame developed using JavaScript, HTML, CSS</mat-card-content>
-          </a>
-    </div>
-    </mat-card>
-  </mat-tab>
-</mat-tab-group>
+<div class="main-content-wrapper">
+
+    <section id="aboutme">
+        <mat-card class="maincardsec">
+            <mat-card-header class="cardcontainer">
+                <div class="imgsec">
+                    <img alt="Card" class="profileImg" [src]="imageProfile" />
+                </div>
+                <div class="aboutsec">
+                    <mat-card-title class="header"> Hello, it's me, Janani Thavaraja</mat-card-title>
+                    <mat-card-subtitle class="paragraph">Motivated Frontend Engineer with a B.ICTS (Hons) in the specializations of Angular, ReactJS, and TypeScript development. Demonstrated the ability to develop responsive web applications and improve code quality and deployment efficiency
+                        by using robust CI/CD pipeline implementation with Github and with specialized QA automation like Selenium, Postman, Cypress. I am looking for an interesting challenge to be able to apply my unique mix of front-end development
+                        and assurance skills to deliver high-performance digital experiences.</mat-card-subtitle>
+                    @if (isBrowser) {
+                    <div class="contactIcon">
+                        <p-button icon="pi pi-phone" (click)="copyPhoneNumber()" />
+                        <a pButton [href]="linkedinUrl()" target="_blank" rel="noopener" icon="pi pi-linkedin">
+                        </a>
+                        <a pButton [href]="githubUrl()" target="_blank" rel="noopener" icon="pi pi-github">
+                        </a>
+
+                        <a pButton [href]="cvUrl()" target="_blank" rel="noopener" icon="pi pi-link">
+                        </a>
+                    </div>}
+                </div>
+
+
+            </mat-card-header>
+        </mat-card>
+    </section>
+
+
+
+    <section id="projects" class="content-section">
+        <h2 class="header">Projects</h2>
+        <div class="projectsec">
+            <div class="mb-4 p-8 flex items-center justify-center">
+                <p-card class="projectBox">
+                    <ng-template #title class="header"> Bookrates </ng-template>
+                    <ng-template #subtitle class="subheader"> Python </ng-template>
+                    <p class="paragraph">
+                        A simple Python project scrapes a list of top books from Goodreads website and saves them to a text file. It uses Selenium to handle dynamic web content and BeautifulSoup for parsing the HTML.
+                    </p>
+                    <ng-template #footer>
+                        @if (isBrowser) {
+                        <div class="flex gap-4 mt-1">
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj1URL()" target="_blank" rel="noopener"></a>
+                        </div>}
+                    </ng-template>
+                </p-card>
+            </div>
+            <div class="mb-4 p-8 flex items-center justify-center">
+                <p-card class="projectBox">
+                    <ng-template #title> Book App </ng-template>
+                    <ng-template #subtitle> Angular </ng-template>
+                    <p class="paragraph">
+                        A dynamic and user-centric book search application developed using Angular, TypeScript, and CSS, integrating the Google Books API to seamlessly retrieve and display detailed information based on user queries. </p>
+                    <ng-template #footer>
+                        @if (isBrowser) {
+                        <div class="flex gap-4 mt-1">
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj2URL()" target="_blank" rel="noopener"></a>
+                        </div>}
+                    </ng-template>
+                </p-card>
+            </div>
+            <div class="mb-4 p-8 flex items-center justify-center">
+                <p-card class="projectBox">
+                    <ng-template #title> Cypress </ng-template>
+                    <ng-template #subtitle> Python </ng-template>
+                    <p class="paragraph">
+                        A portfolio application tested using Cypress to verify that all URLs and navigation paths function correctly. The tests ensure each page loads successfully, and screenshots are captured to document the test results. </p>
+                    <ng-template #footer>
+                        @if (isBrowser) {
+                        <div class="flex gap-4 mt-1">
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj3URL()" target="_blank" rel="noopener"></a>
+                        </div>}
+                    </ng-template>
+                </p-card>
+            </div>
+            <div class="mb-4 p-8 flex items-center justify-center">
+                <p-card class="projectBox">
+                    <ng-template #title> Selenium </ng-template>
+                    <ng-template #subtitle> Python </ng-template>
+                    <p class="paragraph">
+                        A simple Selenium testing project designed to automate and validate key user flows on a sample e-commerce website, including sign-in, login, navigation to the home page, adding products to the cart, and completing a purchase process. </p>
+                    <ng-template #footer>
+                        @if (isBrowser) {
+                        <div class="flex gap-4 mt-1">
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj4URL()" target="_blank" rel="noopener"></a>
+                        </div>}
+                    </ng-template>
+                </p-card>
+            </div>
+            <div class="mb-4 p-8 flex items-center justify-center">
+                <p-card class="projectBox">
+                    <ng-template #title> Springbooot Project </ng-template>
+                    <ng-template #subtitle> Springboot </ng-template>
+                    <p class="paragraph">
+                        A Spring Boot project demonstrating core RESTful API operations such as GET, POST, and PUT. Integrated with MySQL for data management and tested using Postman to validate endpoint functionality. </p>
+                    <ng-template #footer>
+                        @if (isBrowser) {
+                        <div class="flex gap-4 mt-1">
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj5URL()" target="_blank" rel="noopener"></a>
+                        </div>}
+                    </ng-template>
+                </p-card>
+            </div>
+            <div class="mb-4 p-8 flex items-center justify-center">
+                <p-card class="projectBox">
+                    <ng-template #title> SQL Data Management </ng-template>
+                    <ng-template #subtitle> MySQL </ng-template>
+                    <p class="paragraph">
+                        This is a SQL work where web site is required to save its data to the database system. I created this webpage using php with HTML, Bootstrap and SQL. </p>
+                    <ng-template #footer>
+                        @if (isBrowser) {
+                        <div class="flex gap-4 mt-1">
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj6URL()" target="_blank" rel="noopener"></a>
+                        </div>}
+                    </ng-template>
+                </p-card>
+            </div>
+            <div class="mb-4 p-8 flex items-center justify-center">
+                <p-card class="projectBox">
+                    <ng-template #title> Bear Jump </ng-template>
+                    <ng-template #subtitle> JavaScript </ng-template>
+                    <p class="paragraph">
+                        A mini-game developed using JavaScript, HTML, and CSS, featuring a bear character that jumps over obstacles appearing in its path, showcasing interactive gameplay. </p>
+                    <ng-template #footer>
+                        @if (isBrowser) {
+                        <div class="flex gap-4 mt-1">
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj7URL()" target="_blank" rel="noopener"></a>
+                        </div>}
+                    </ng-template>
+                </p-card>
+            </div>
+        </div>
+    </section>
+
+    <section id="workexperience" class="content-section">
+        <h2 class="header">Work Experience</h2>
+        <div class="card">
+            <p-fieldset>
+                <ng-template #header>
+                    <div class="flex items-center gap-2 px-2">
+                        <p-avatar image="https://media.licdn.com/dms/image/v2/D560BAQHditYLU7sHbA/company-logo_200_200/company-logo_200_200/0/1709513997733/fieldex_logo?e=2147483647&v=beta&t=k52sxF4774YRe4dvbeQs3enJ5nbPzUy-o7hpQUuz700" shape="circle" />
+                        <span class="font-bold subheader">Fieldex Sdn Bhd (Singapore). | April 2025 - October 2025</span>
+                    </div>
+                </ng-template>
+                <h2 class="subheader">Junior Software Engineer</h2>
+                <h2 class="subheader">Fieldex System Project</h2>
+                <ul class="m-0" class="paragraph">
+                    <li>Worked on the Fieldex system developing and maintaining front-end features using Angular, SCSS, TypeScript, and JSON, including front-end API handling and business logic implementation.</li>
+                    <li>Performed API testing using Postman and managed defect tracking through JIRA.</li>
+                    <li>Automated smoke and end-to-end tests using Selenium, improving release confidence and reducing manual test workload. Implemented CI/CD pipelines to streamline deployment workflows using Github.</li>
+
+                </ul>
+            </p-fieldset>
+        </div>
+        <div class="card">
+            <p-fieldset>
+                <ng-template #header>
+                    <div class="flex items-center gap-2 px-2">
+                        <p-avatar image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyT_KB8nVnPPloL70zZe66RL8BoJ5yomZxRQ&s" shape="circle" />
+                        <span class="font-bold subheader">Loonslab (pvt) ltd. | February 2024 - August 2024</span>
+                    </div>
+                </ng-template>
+                <h2 class="subheader">Trainee Software Engineer</h2>
+                <h2 class="subheader">Crypto Tracker Web App</h2>
+                <ul class="m-0" class="paragraph">
+                    <li>Designed and prototyped a Crypto Tracker web application to provide 90-92% accurate cryptocurrency trading predictions in Figma, integrating real-time cryptocurrency data and developed a responsive frontend using EJS, HTML, CSS, and
+                        JavaScript to ensure seamless performance and a consistent user experience across all devices. Additionally i optimized the website for SEO ranking to improve visibility and organic traffic.
+                    </li>
+                    <li>Developed robust data solutions with Python, leveraging Selenium for web scraping and Beautiful Soup for precise data extraction, including automation QA for data validation and application testing.</li>
+                    <li>Developed and optimized a Chrome extension with a user-friendly set of features for improving accessibility and providing a seamless user experience for the Crypto Tracker Web App.</li>
+
+                </ul>
+                <h2 class="subheader">Daily Diary Web App</h2>
+                <ul class="m-0" class="paragraph">
+                    <li>Developed an easy-to-use Daily Diary web app with ReactJS, Bootstrap, and JavaScript theme customization.and enhanced text formatting features for a personalized writing experience.</li>
+                    <li>Integrated CKEditor for rich-text editing support, providing easier usability and content customization. Supported cross-device compatibility through a responsive layout for seamless user experiences.</li>
+                    <li>Utilized QA automation techniques to continuously test and validate features like rich-text editing, theme application, and cross-device responsiveness.</li>
+                </ul>
+            </p-fieldset>
+        </div>
+    </section>
+
+    <section id="technicalskills" class="content-section">
+        <h2 class="header">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <img [src]="imagepath()" alt="Angular" class="skill-logo">
+                <p class="skill-name paragraph">Angular</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath1()" alt="ReactJS" class="skill-logo">
+                <p class="skill-name paragraph">ReactJS</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath2()" alt="Python" class="skill-logo">
+                <p class="skill-name paragraph">Python</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath3()" alt="Selenium" class="skill-logo">
+                <p class="skill-name paragraph">Selenium</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath4()" alt="Cypress" class="skill-logo">
+                <p class="skill-name paragraph">Cypress</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath5()" alt="Spring Boot" class="skill-logo">
+                <p class="skill-name paragraph">Spring Boot</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath6()" alt="JSON" class="skill-logo">
+                <p class="skill-name paragraph">JSON</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath7()" alt="Bootstrap" class="skill-logo">
+                <p class="skill-name paragraph">Bootstrap</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath8()" alt="Postman" class="skill-logo">
+                <p class="skill-name paragraph">Postman</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath9()" alt="Java" class="skill-logo">
+                <p class="skill-name paragraph">Java</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath10()" alt="TypeScript" class="skill-logo">
+                <p class="skill-name paragraph">TypeScript</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath11()" alt="HTML" class="skill-logo">
+                <p class="skill-name paragraph">HTML</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath12()" alt="CSS3" class="skill-logo">
+                <p class="skill-name paragraph">CSS3</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath13()" alt="Jira" class="skill-logo">
+                <p class="skill-name paragraph">Jira</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath15()" alt="MySQL" class="skill-logo">
+                <p class="skill-name paragraph">MySQL</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath16()" alt="Figma" class="skill-logo">
+                <p class="skill-name paragraph">Figma</p>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="contactme" class="content-section">
+        <h2 class="header">Contact Me</h2>
+        <p-card class="contactcard">
+            <div class="contact-form-container">
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+                    <div class="inputlabel">
+                        <p-floatlabel>
+                            <input id="email-input" type="email" pInputText formControlName="email" class="w-full">
+                            <label for="email-input">Your Email</label>
+                        </p-floatlabel>
+                    </div>
+                    <br>
+
+                    <div class="inputlabel">
+                        <p-floatlabel>
+                            <textarea id="message-input" pInputTextarea formControlName="message" rows="20" style="resize: none" class="w-full"></textarea>
+                            <label for="message-input">Message</label>
+                        </p-floatlabel>
+                    </div>
+
+                    <div>
+                        @if (isBrowser) {
+                        <button pButton label="Send Email" type="submit" [disabled]="contactForm.invalid" icon="pi pi-send" class="sendbutton"></button>
+                        }
+                    </div>
+                </form>
+            </div>
+        </p-card>
+    </section>
+
+    <section id="footer" class="content-section">
+        <div class="footer-wrapper">
+            <div class="footer-links">
+                @if (isBrowser) {
+                <a pButton label="Email" (click)="copyEmailAddress()" icon="pi pi-envelope" styleClass="p-button-text p-button-secondary">
+                </a>
+                <a pButton label="LinkedIn" [href]="linkedinUrl()" target="_blank" rel="noopener" icon="pi pi-linkedin" styleClass="p-button-text p-button-secondary">
+                </a>
+                <a pButton label="GitHub" [href]="githubUrl()" target="_blank" rel="noopener" icon="pi pi-github" styleClass="p-button-text p-button-secondary">
+                </a>
+                <a pButton label="View CV" [href]="cvUrl()" target="_blank" rel="noopener" icon="pi pi-link" styleClass="p-button-text p-button-secondary">
+                </a>
+                }
+            </div>
+            <p class="copyright-text">
+                Designed & Built by Janani Thavaraja. | &copy; 2025
+            </p>
+        </div>
+    </section>
+</div>

@@ -1,12 +1,31 @@
-import {Component} from '@angular/core';
-import {MatTabsModule} from '@angular/material/tabs';
-import {ChangeDetectionStrategy, signal} from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatListModule} from '@angular/material/list';
-import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  signal,
+  Inject,
+  PLATFORM_ID,
+} from "@angular/core";
+import { isPlatformBrowser, NgStyle } from "@angular/common";
+import { MatCardModule } from "@angular/material/card";
+import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
+import { Menubar } from "primeng/menubar";
+import { MenuItem } from "primeng/api";
+import { CardModule } from "primeng/card";
+import { ButtonModule } from "primeng/button";
+import { FieldsetModule } from "primeng/fieldset";
+import { AvatarModule } from "primeng/avatar";
+import { PrimeIcons } from "primeng/api";
+import {
+  ReactiveFormsModule,
+  FormGroup,
+  FormControl,
+  Validators,
+} from "@angular/forms";
+import { InputTextModule } from "primeng/inputtext";
+import { FloatLabelModule } from "primeng/floatlabel";
+import emailjs from "emailjs-com";
+import { EmailConfig } from "../email.config";
 
 export interface Tile {
   color: string;
@@ -16,53 +35,195 @@ export interface Tile {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.html',
-  styleUrl: './app.css',
-  imports: [MatTabsModule, MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule,MatListModule, MatSnackBarModule], 
+  selector: "app-root",
+  templateUrl: "./app.html",
+  styleUrl: "./app.css",
+  imports: [
+    MatCardModule,
+    MatSnackBarModule,
+    Menubar,
+    CardModule,
+    ButtonModule,
+    FieldsetModule,
+    AvatarModule,
+    ReactiveFormsModule,
+    InputTextModule,
+    FloatLabelModule,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App {
-  constructor(private snackBar: MatSnackBar) {}
+export class App implements OnInit {
+  isBrowser: boolean;
+  items: MenuItem[] = [];
+  contactForm!: FormGroup;
+  imageProfile = "/assets/j.png";
 
-  phoneNumber = signal('+94754019752');
-  linkedinUrl = signal('https://www.linkedin.com/in/janani-thavarajah-52987a1b2');
-  githubUrl = signal('https://github.com/Jaanulittleluv');
-  cvUrl = signal('https://drive.google.com/file/d/1VFiDW0Mp9UVKGfLbYNz4sNh87mVkBm5f/view?usp=sharing');
-  prj1URL = signal('https://github.com/Jaanulittleluv/BookRates');
-  prj2URL = signal('https://github.com/Jaanulittleluv/BookApp');
-  prj3URL = signal('https://github.com/Jaanulittleluv/SpringBoot');
-  prj4URL = signal('https://github.com/Jaanulittleluv/sql-employee-data-management');
-  prj5URL = signal('https://github.com/Jaanulittleluv/Veget-store');
-  prj6URL = signal('https://github.com/Jaanulittleluv/Bear-Jump');
-  prj7URL = signal('https://github.com/Jaanulittleluv/Cypress');
+  constructor(
+    private snackBar: MatSnackBar,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
+  ngOnInit() {
+    this.items = [
+      {
+        label: "About Me",
+        icon: "pi pi-user",
+        command: () => this.scrollToSection("aboutme"),
+      },
+      {
+        label: "Projects",
+        icon: "pi pi-briefcase",
+        command: () => this.scrollToSection("projects"),
+      },
+      {
+        label: "Work Experience",
+        icon: "pi pi-id-card",
+        command: () => this.scrollToSection("workexperience"),
+      },
+      {
+        label: "Technical Skills",
+        icon: "pi pi-star",
+        command: () => this.scrollToSection("technicalskills"),
+      },
+      {
+        label: "Contact Me",
+        icon: "pi pi-envelope",
+        command: () => this.scrollToSection("contactme"),
+      },
+    ];
+
+    this.contactForm = new FormGroup({
+      email: new FormControl("", [Validators.required, Validators.email]),
+      message: new FormControl("", Validators.required),
+    });
+  }
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  phoneNumber = signal("+94754019752");
+  linkedinUrl = signal("https://www.linkedin.com/in/janani-thavarajah-52987a1b2");
+  githubUrl = signal("https://github.com/Jaanulittleluv");
+  cvUrl = signal("https://drive.google.com/file/d/1L1OYkD8VjowaDCyGqJvumsRi0jtMPdVF/view?usp=sharing");
+  prj1URL = signal("https://github.com/Jaanulittleluv/BookRates");
+  prj2URL = signal("https://github.com/Jaanulittleluv/BookApp");
+  prj3URL = signal("https://github.com/Jaanulittleluv/Cypress");
+  prj4URL = signal("https://github.com/Jaanulittleluv/Selenium");
+  prj5URL = signal("https://github.com/Jaanulittleluv/SpringBoot");
+  prj6URL = signal("https://github.com/Jaanulittleluv/sql-employee-data-management");
+  prj7URL = signal("https://github.com/Jaanulittleluv/Bear-Jump");
 
   async copyPhoneNumber() {
-  try {
-    const number = this.phoneNumber();
-    await navigator.clipboard.writeText(number);
-    console.log('Phone number copied to clipboard:', number);
-    
-    this.snackBar.open('Number is copied', 'Dismiss', {
-        duration: 2000, 
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-    });
-  } catch (err) {
-    console.error('Failed to copy phone number:', err);
-    this.snackBar.open('Failed to copy number', 'Dismiss', {duration: 2000});
+    try {
+      const number = this.phoneNumber();
+      await navigator.clipboard.writeText(number);
+      this.snackBar.open("Number is copied", "Dismiss", {
+        duration: 2000,
+        horizontalPosition: "left",
+        verticalPosition: "bottom",
+      });
+    } catch (err) {
+      console.error("Failed to copy phone number:", err);
+      this.snackBar.open("Failed to copy number", "Dismiss", {
+        duration: 2000,
+      });
+    }
   }
-}
 
-  imagepath = signal('https://www.svgrepo.com/show/327335/logo-angular.svg');
-  imagepath1 = signal('https://www.svgrepo.com/show/327386/logo-python.svg');
-  imagepath2 = signal('https://www.svgrepo.com/show/473780/selenium.svg');
-  imagepath3 = signal('https://images.icon-icons.com/3261/PNG/512/reactjs_logo_icon_206693.png');
-  imagepath4 = signal('https://www.svgrepo.com/show/503404/language-typescript.svg');
-  imagepath5 = signal('https://www.svgrepo.com/show/473731/mysql.svg');
-  imagepath6 = signal('https://images.freeimages.com/fic/images/icons/2779/simple_icons/4096/php_4096_black.png');
-  imagepath7 = signal('https://www.svgrepo.com/show/330083/bootstrap.svg');
-  imagepath8 = signal('https://www.svgrepo.com/show/333604/spring-boot.svg');
-  imagepath9 = signal('https://www.svgrepo.com/show/327348/logo-css3.svg');
-  imagepath10 = signal('https://www.svgrepo.com/show/361494/figma-logo.svg');
+  copyEmailAddress() {
+    const email = "janani99824@gmail.com";
+    if (this.isBrowser && navigator.clipboard) {
+      navigator.clipboard
+        .writeText(email)
+        .then(() => {
+          this.snackBar.open("Email address copied to clipboard!", "Close", {
+            duration: 3000,
+            horizontalPosition: "left",
+            verticalPosition: "bottom",
+          });
+        })
+        .catch((err) => {
+          console.error("Could not copy text: ", err);
+          this.snackBar.open("Failed to copy email address!", "Dismiss", {
+            duration: 4000,
+            horizontalPosition: "left",
+            verticalPosition: "bottom",
+          });
+        });
+    }
+  }
+
+  async onSubmit() {
+    if (this.contactForm.valid) {
+      const { email, message } = this.contactForm.value;
+
+      const serviceID = EmailConfig.serviceID;
+      const templateID = EmailConfig.templateID;
+      const publicKey = EmailConfig.publicKey;
+
+      const templateParams = {
+        from_email: email,
+        message: message,
+      };
+
+      try {
+        const response = await emailjs.send(
+          serviceID,
+          templateID,
+          templateParams,
+          publicKey
+        );
+        console.log("SUCCESS!", response.status, response.text);
+        this.snackBar.open(
+          "Your message has been sent successfully!",
+          "Dismiss",
+          {
+            duration: 4000,
+            horizontalPosition: "center",
+            verticalPosition: "bottom",
+          }
+        );
+        this.contactForm.reset();
+      } catch (error) {
+        console.error("FAILED...", error);
+        this.snackBar.open(
+          "Failed to send your message. Please try again later.",
+          "Dismiss",
+          {
+            duration: 4000,
+            horizontalPosition: "center",
+            verticalPosition: "bottom",
+          }
+        );
+      }
+    } else {
+      this.snackBar.open("Please check the form for errors.", "Dismiss", {
+        duration: 3000,
+        horizontalPosition: "center",
+        verticalPosition: "bottom",
+      });
+    }
+  }
+
+  imagepath = signal("https://www.svgrepo.com/show/353396/angular-icon.svg");
+  imagepath1 = signal("https://www.svgrepo.com/show/452092/react.svg");
+  imagepath2 = signal("https://www.svgrepo.com/show/452091/python.svg");
+  imagepath3 = signal("https://www.svgrepo.com/show/354321/selenium.svg");
+  imagepath4 = signal("https://www.svgrepo.com/show/374270/cypress.svg");
+  imagepath5 = signal("https://www.svgrepo.com/show/354380/spring-icon.svg");
+  imagepath6 = signal("https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/file-json-color-green-icon.png");
+  imagepath7 = signal("https://www.svgrepo.com/show/303293/bootstrap-4-logo.svg");
+  imagepath8 = signal("https://www.svgrepo.com/show/354202/postman-icon.svg");
+  imagepath9 = signal("https://www.svgrepo.com/show/303388/java-4-logo.svg");
+  imagepath10 = signal("https://www.svgrepo.com/show/374144/typescript.svg");
+  imagepath11 = signal("https://www.svgrepo.com/show/452228/html-5.svg");
+  imagepath12 = signal("https://www.svgrepo.com/show/452185/css-3.svg");
+  imagepath13 = signal("https://staging.svgrepo.com/show/353935/jira.svg");
+  imagepath14 = signal("https://staging.svgrepo.com/show/353935/jira.svg");
+  imagepath15 = signal("https://www.svgrepo.com/show/303251/mysql-logo.svg");
+  imagepath16 = signal("https://www.svgrepo.com/show/303210/figma-1-logo.svg");
 }
