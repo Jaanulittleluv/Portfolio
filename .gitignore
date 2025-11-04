@@ -43,4 +43,4 @@ __screenshots__/
 Thumbs.db
 
 #ignore the file
-email.config.ts
+src/app/email.config.ts

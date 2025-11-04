@@ -25,7 +25,7 @@ import {
 import { InputTextModule } from "primeng/inputtext";
 import { FloatLabelModule } from "primeng/floatlabel";
 import emailjs from "emailjs-com";
-import { EmailConfig } from "../email.config";
+import { emailConfig } from "./email.config";
 
 export interface Tile {
   color: string;
@@ -161,9 +161,9 @@ export class App implements OnInit {
     if (this.contactForm.valid) {
       const { email, message } = this.contactForm.value;
 
-      const serviceID = EmailConfig.serviceID;
-      const templateID = EmailConfig.templateID;
-      const publicKey = EmailConfig.publicKey;
+      const serviceID = emailConfig.serviceId;
+      const templateID = emailConfig.templateId;
+      const publicKey = emailConfig.publicKey;
 
       const templateParams = {
         from_email: email,
