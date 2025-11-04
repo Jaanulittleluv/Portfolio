@@ -56,7 +56,7 @@ export class App implements OnInit {
   isBrowser: boolean;
   items: MenuItem[] = [];
   contactForm!: FormGroup;
-  imageProfile = "/assets/j.png";
+  imageProfile = "assets/j.png";
 
   constructor(
     private snackBar: MatSnackBar,
