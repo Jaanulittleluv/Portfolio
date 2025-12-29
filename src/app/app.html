@@ -11,9 +11,9 @@
                 </div>
                 <div class="aboutsec">
                     <mat-card-title class="header"> Hello, it's me, Janani Thavaraja</mat-card-title>
-                    <mat-card-subtitle class="paragraph">Motivated Frontend Engineer with a B.ICTS (Hons) in the specializations of Angular, ReactJS, and TypeScript development. Demonstrated the ability to develop responsive web applications and improve code quality and deployment efficiency
-                        by using robust CI/CD pipeline implementation with Github and with specialized QA automation like Selenium, Postman, Cypress. I am looking for an interesting challenge to be able to apply my unique mix of front-end development
-                        and assurance skills to deliver high-performance digital experiences.</mat-card-subtitle>
+                    <mat-card-subtitle class="paragraph">Motivated Frontend Engineer with hands-on experience with Angular, ReactJS, and TypeScript. Specialized in
+building responsive, user-friendly, web applications and translating UI/UX concepts into functional, high-quality
+interfaces. Improving development workflows through QA Automation, CI/CD and API testing. Strong problem-solving ability, clear written communication and a passion for creating accessible digital experiences.</mat-card-subtitle>
                     @if (isBrowser) {
                     <div class="contactIcon">
                         <p-button icon="pi pi-phone" (click)="copyPhoneNumber()" />
@@ -39,6 +39,36 @@
         <div class="projectsec">
             <div class="mb-4 p-8 flex items-center justify-center">
                 <p-card class="projectBox">
+                    <ng-template #title class="header"> HearCall </ng-template>
+                    <ng-template #subtitle class="subheader"> TypeScript </ng-template>
+                    <p class="paragraph">
+                        HearCall is an Angular application providing real-time, live captioning of spoken audio using the browser's native Web Speech API. Key feature is the ability to download the full transcript as a PDF. The application uses RxJS Observables for reactive state management of the transcription process.
+                    </p>
+                    <ng-template #footer>
+                        @if (isBrowser) {
+                        <div class="flex gap-4 mt-1">
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj1URL()" target="_blank" rel="noopener"></a>
+                        </div>}
+                    </ng-template>
+                </p-card>
+            </div>
+            <div class="mb-4 p-8 flex items-center justify-center">
+                <p-card class="projectBox">
+                    <ng-template #title class="header"> FormApp </ng-template>
+                    <ng-template #subtitle class="subheader"> JavaScript </ng-template>
+                    <p class="paragraph">
+                        This is a simple Form web application that add users, edit users and delete the users (CRUD). This web Application is created using MERN stack (MongoDB, Express.js (implied via Node.js/API), React JS, Node.js) and POSTMAN.
+                    </p>
+                    <ng-template #footer>
+                        @if (isBrowser) {
+                        <div class="flex gap-4 mt-1">
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj2URL()" target="_blank" rel="noopener"></a>
+                        </div>}
+                    </ng-template>
+                </p-card>
+            </div>
+            <div class="mb-4 p-8 flex items-center justify-center">
+                <p-card class="projectBox">
                     <ng-template #title class="header"> Bookrates </ng-template>
                     <ng-template #subtitle class="subheader"> Python </ng-template>
                     <p class="paragraph">
@@ -47,7 +77,7 @@
                     <ng-template #footer>
                         @if (isBrowser) {
                         <div class="flex gap-4 mt-1">
-                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj1URL()" target="_blank" rel="noopener"></a>
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj3URL()" target="_blank" rel="noopener"></a>
                         </div>}
                     </ng-template>
                 </p-card>
@@ -61,7 +91,7 @@
                     <ng-template #footer>
                         @if (isBrowser) {
                         <div class="flex gap-4 mt-1">
-                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj2URL()" target="_blank" rel="noopener"></a>
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj4URL()" target="_blank" rel="noopener"></a>
                         </div>}
                     </ng-template>
                 </p-card>
@@ -75,7 +105,7 @@
                     <ng-template #footer>
                         @if (isBrowser) {
                         <div class="flex gap-4 mt-1">
-                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj3URL()" target="_blank" rel="noopener"></a>
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj5URL()" target="_blank" rel="noopener"></a>
                         </div>}
                     </ng-template>
                 </p-card>
@@ -89,7 +119,7 @@
                     <ng-template #footer>
                         @if (isBrowser) {
                         <div class="flex gap-4 mt-1">
-                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj4URL()" target="_blank" rel="noopener"></a>
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj6URL()" target="_blank" rel="noopener"></a>
                         </div>}
                     </ng-template>
                 </p-card>
@@ -103,7 +133,7 @@
                     <ng-template #footer>
                         @if (isBrowser) {
                         <div class="flex gap-4 mt-1">
-                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj5URL()" target="_blank" rel="noopener"></a>
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj7URL()" target="_blank" rel="noopener"></a>
                         </div>}
                     </ng-template>
                 </p-card>
@@ -117,7 +147,7 @@
                     <ng-template #footer>
                         @if (isBrowser) {
                         <div class="flex gap-4 mt-1">
-                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj6URL()" target="_blank" rel="noopener"></a>
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj8URL()" target="_blank" rel="noopener"></a>
                         </div>}
                     </ng-template>
                 </p-card>
@@ -131,7 +161,7 @@
                     <ng-template #footer>
                         @if (isBrowser) {
                         <div class="flex gap-4 mt-1">
-                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj7URL()" target="_blank" rel="noopener"></a>
+                            <a pButton label="Open" class="w-full" styleClass="w-full" [href]="prj9URL()" target="_blank" rel="noopener"></a>
                         </div>}
                     </ng-template>
                 </p-card>
@@ -227,6 +257,10 @@
                 <p class="skill-name paragraph">Postman</p>
             </div>
             <div class="skill-item">
+                <img [src]="imagepath18()" alt="NodeJS" class="skill-logo">
+                <p class="skill-name paragraph">Node.js</p>
+            </div>
+            <div class="skill-item">
                 <img [src]="imagepath9()" alt="Java" class="skill-logo">
                 <p class="skill-name paragraph">Java</p>
             </div>
@@ -245,6 +279,10 @@
             <div class="skill-item">
                 <img [src]="imagepath13()" alt="Jira" class="skill-logo">
                 <p class="skill-name paragraph">Jira</p>
+            </div>
+            <div class="skill-item">
+                <img [src]="imagepath17()" alt="MongoDB" class="skill-logo">
+                <p class="skill-name paragraph">MongoDB</p>
             </div>
             <div class="skill-item">
                 <img [src]="imagepath15()" alt="MySQL" class="skill-logo">
